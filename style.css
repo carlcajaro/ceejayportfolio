@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap');
+
+/* General Styles */
+:root {
+    --deadpool-red: #AF262C;
+    --deadpool-black: #1A1A1A;
+    --deadpool-white: #F5F5F5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--deadpool-black);
+    color: var(--deadpool-white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(26, 26, 26, 0.9);
+    color: var(--deadpool-white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    color: var(--deadpool-red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--deadpool-white);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--deadpool-red);
+}
+
+/* Hero Section (Home) */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('images/deadpool-background.jpg') no-repeat center center/cover;
+    position: relative;
+    padding-top: 60px;
+}
+
+.hero-content h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    color: var(--deadpool-red);
+    text-shadow: 4px 4px 0 var(--deadpool-black);
+    animation: comic-pop 1s ease-out;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* Call-to-action Button */
+.cta-button {
+    background-color: var(--deadpool-red);
+    color: var(--deadpool-white);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--deadpool-red);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--deadpool-white);
+    color: var(--deadpool-red);
+}
+
+/* About Section */
+.about, .skills, .contact {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about h2, .skills h2, .contact h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: var(--deadpool-red);
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--deadpool-red);
+    object-fit: cover;
+    filter: grayscale(100%) brightness(1.2); /* Gives a desaturated, comic-like effect */
+    transition: filter 0.5s ease;
+}
+
+.profile-pic:hover {
+    filter: none; /* Colorize on hover */
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #2c2c2c;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: #383838;
+    padding: 2rem;
+    border: 2px solid var(--deadpool-red);
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-card h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    color: var(--deadpool-red);
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-info {
+    max-width: 600px;
+    margin: auto;
+}
+
+.social-links a {
+    color: var(--deadpool-red);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--deadpool-white);
+}
+
+/* Footer */
+footer {
+    background: var(--deadpool-black);
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--deadpool-red);
+}
+
+/* Animations */
+@keyframes comic-pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .nav-links {
+        display: none;
+    }
+    nav {
+        justify-content: center;
+    }
+}
